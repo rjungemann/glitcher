@@ -5,7 +5,7 @@ class Array; def pick; self[rand(self.size)] end end
 class Range; def pick; self.min + rand(self.max - self.min) end end
 
 # swap two chars in a string
-class String; def swap i, j; temp = self[i]; self[i] = self[j]; self[j] = temp; self end end
+class String; def swap i, j; self[i], self[j] = self[j], self[i]; self end end
 
 module Glitcher
   class JPEG
