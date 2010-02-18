@@ -59,7 +59,7 @@ module Glitcher
     end
 
     def munge_swap_adjacent n = 1
-      n.times { i = indices.pick.pick; @input.swap(i, i + 1) }
+      n.times { i = @allowed_indices.pick.pick; @input.swap(i, i + 1) }
       self
     end
 
