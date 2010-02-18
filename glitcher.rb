@@ -9,9 +9,8 @@ class String; def swap i, j; self[i], self[j] = self[j], self[i]; self end end
 
 module Glitcher
   class JPEG
-    def self.from_file infile
-      Glitcher::JPEG.new File.read(infile).unpack("H*").first
-    end
+    def self.hex_from_file infile; File.read(infile).unpack("H*").first end
+    def self.from_file infile; JPEG.new JPEG.hex_from_file(infile) end
     
     def initialize input
       @input = input
@@ -38,9 +37,7 @@ module Glitcher
       end
     end
 
-    def custom_munge n = 1, &block
-      n.times { |i| yield self, @input }
-    end
+    def custom_munge n = 1, &block; n.times { |i| yield self, @input } end
 
     def munge n = 1
       n.times { @input[rand(@input.size)] = rand(16).to_s(16) }
