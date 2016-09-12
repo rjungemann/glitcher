@@ -1,7 +1,9 @@
-ffmpeg
-vholdrmov
-examples/
-examples2/
-homebrew/
-ffmpegX.app/
-tmp/
+/.bundle/
+/.yardoc
+/Gemfile.lock
+/_yardoc/
+/coverage/
+/doc/
+/pkg/
+/spec/reports/
+/tmp/
